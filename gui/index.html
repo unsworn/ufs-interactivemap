@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Interactive map GUI</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="js/angular.min.js"></script>
+  <script src="js/papaparse.js"></script>
+  <script src="js/interactivemap-gui.js"></script>
+ 
+</head>
+
+<body ng-app="interactivemap-gui" ng-controller="SlideshowCtrl as slideshowCtrl">
+<div class="menu-fixed">
+  <div class="slideshow" ng-click="slideshowCtrl.change(0)" ng-class="{selected: slideshowCtrl.slideShow==0}">
+    <p class="slideshow-titel">Näsets Natur</p>
+    <p class="slideshow-subtitel">Allt om natur</p>
+  </div>
+  <div class="slideshow" ng-click="slideshowCtrl.change(1)" ng-class="{selected: slideshowCtrl.slideShow==1}">
+    <p class="slideshow-titel">Hitta till</p>
+    <p class="slideshow-subtitel">Hitta till på karta</p>
+  </div>
+  <div class="slideshow" ng-click="slideshowCtrl.change(2)" ng-class="{selected: slideshowCtrl.slideShow==2}">
+    <p class="slideshow-titel">Vattenhistoria</p>
+    <p class="slideshow-subtitel">Vattenhistoria</p>
+  </div>
+</div>
+<div class="top-fixed">
+  <a class="title">INTERAKTIVKARTA</a>
+  <a class="lang selected">SVENSKA</a>
+  <a class="lang">ENGLISH</a>
+</div>
+
+<div class="items-wrapper">
+  <div ng-if="slideshowCtrl.slideShow==0" class="item-square" ng-repeat="entry in slideshowCtrl.entries" style="background-image: url(images/{{entry.TextBoxImage}})" ng-click="slideshowCtrl.chooseItemS0($index)" ng-class="{selected: slideshowCtrl.selectedItemS0==$index}">
+   <div class="label">{{entry.TitleSwedish}}</div>  
+  </div>
+
+   <div ng-if="slideshowCtrl.slideShow==1" class="item-square" ng-repeat="entry in slideshowCtrl.entries" style="background-image: url(images/{{entry.TextBoxImage}})" ng-click="slideshowCtrl.chooseItemS1($index)" ng-class="{selected: slideshowCtrl.selectedItemS1==$index}">
+   <div class="label">{{entry.TitleSwedish}}</div>  
+  </div>
+
+  <div ng-if="slideshowCtrl.slideShow==2" class="item-long" ng-repeat="entry in slideshowCtrl.entries" style="background-image: url(images/{{entry.BaseMap}})" ng-click="slideshowCtrl.chooseItemS2($index)" ng-class="{selected: slideshowCtrl.selectedItemS2==$index}">
+  <div class="label">{{entry.TitleSwedish}}</div>
+  <div class="label bottom">{{entry.TextBoxSwedish}}</div>  
+  </div>
+</div>
+
+</body>
+</html>
