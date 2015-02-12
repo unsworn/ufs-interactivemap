@@ -5,53 +5,33 @@
   <title>Interactive map Slideshow 1</title>
   <link href="style.css" rel="stylesheet" />
 
-  <script src="node_modules/angular/angular.js"></script>
+  <script src="js/angular.js"></script>
   <script src="js/papaparse.js"></script>
   <script src="js/interactivemap.js"></script>
+ 
 </head>
 
 <body ng-app="interactivemap" ng-init="index=1">
 
-<div id="slideshow" ng-controller="SlideshowCtrl as slideshowCtrl">
-  <button class="button" ng-click="slideshowCtrl.change()">change slideshow</button>
-  
-  <div id="slide{{entry.Slide}}" ng-repeat="entry in slideshowCtrl.entries" ng-show="index=={{entry.Slide}}">
-    <div class="map-container">
-      <div class="basemap" style="background-image: url(images/nature_brag_base_2.jpg)"></div>
-      <!--<div class="topmap" style="background-image: url(images/{{entry.TopMap}})"></div>-->
-      <div ng-if="entry.TopMap"><img class="topmap" ng-src="images/{{entry.TopMap}}" alt="" /></div>
-      <!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      width="1920px" height="1080px" viewBox="0 0 1920 1080" enable-background="new 0 0 1920 1080" xml:space="preserve">
-      <circle id="shape" fill="#DD288C" cx="1027" cy="847.667" r="12.833"/>
-      <circle fill="#DD288C" cx="1054" cy="889.002" r="17.667"/>
-      <circle fill="#DD288C" cx="1114.5" cy="902.5" r="13.5"/>
-      <circle fill="#DD288C" cx="1111" cy="827" r="11"/>
-      <circle fill="#DD288C" cx="1126.5" cy="871.5" r="9.5"/>
-      <circle fill="#DD288C" cx="1099.667" cy="787.667" r="15"/>
-      <circle fill="#DD288C" cx="1015" cy="807" r="21"/>
-      <circle fill="#DD288C" cx="1015" cy="889" r="9"/>
-      <circle fill="#DD288C" cx="1079.667" cy="925.999" r="20"/>
-      <circle fill="#DD288C" cx="1121" cy="935" r="7"/>
-      <circle fill="#DD288C" cx="1011" cy="772.334" r="3.5"/>
-      <circle fill="#DD288C" cx="1032.667" cy="769.334" r="5"/>
-
-       <animate 
-        xlink:href="#shape"
-        attributeName="opacity"
-        from="0"
-        to="1" 
-        dur="0.5s"
-        begin="1s" />
-      </svg> -->
-    </div>
-    <div class="content-container">
-      <h1>{{entry.TitleSwedish}}</h1>
-      <p>{{entry.TextBoxSwedish}}</p>
-      <div class="circular" style="background-image: url(images/{{entry.TextBoxImage}})"></div>
+  <div id="slideshow" ng-controller="SlideshowCtrl as slideshowCtrl">
+    <button class="button" ng-click="slideshowCtrl.change()">change slideshow</button>
+    
+    <div id="slide{{entry.Slide}}" ng-repeat="entry in slideshowCtrl.entries" ng-show="index=={{entry.Slide}}">
+      <div class="map-container">
+        <div class="basemap" style="background-image: url(images/{{entry.BaseMap}})"></div>
+        <!--<div class="topmap" style="background-image: url(images/{{entry.TopMap}})"></div>-->
+        <div ng-if="entry.TopMap"><img class="topmap" ng-src="images/{{entry.TopMap}}" alt="" /></div>
+      </div>
+      <div class="content-container">
+        <h1>{{entry.TitleSwedish}}</h1>
+        <p>{{entry.TextBoxSwedish}}</p>
+        <div class="circular" style="background-image: url(images/{{entry.TextBoxImage}})"></div>
+      </div>
     </div>
   </div>
-</div>
-<button class="button" ng-click="index=index-1">prev</button>
-<button class="button" ng-click="index=index+1">next</button>
+  
+  <button class="button" ng-click="index=index-1">prev</button>
+  <button class="button" ng-click="index=index+1">next</button>
+
 </body>
 </html>

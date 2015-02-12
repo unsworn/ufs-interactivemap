@@ -24,10 +24,11 @@ angular.module("interactivemap", [])
   }
 
   // Load CSV data.
-  $http.get('/data/data1.csv')
+  $http.get('data/nature.csv')
     .success(onSuccess);
 
-  $http.get('/data/data2.csv')
+  $http.get('data/places.csv')
     .success(onSuccess);
 
 });
+ 
