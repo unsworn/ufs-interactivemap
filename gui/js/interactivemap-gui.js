@@ -13,7 +13,7 @@ angular.module("interactivemap-gui", [])
   this.change = function(n) {
    this.entries = this.slideShows[n];
    this.slideShow = n;
-   //console.log(this.slideShow);
+   console.log(this.slideShow);
   };
 
   this.chooseItemS0 = function(n) { // Ugly
@@ -30,9 +30,9 @@ angular.module("interactivemap-gui", [])
     // Convert CSV to JSON.
     console.log("onSuccess");
     var jsonData = Papa.parse(csvData, {header: true});
-    console.log(jsonData);
+    //console.log(jsonData);
     self.slideShows.push(jsonData.data);
-    console.log('entries after http', self.entries);
+    //console.log('entries after http', self.entries);
   }
 
   // Load CSV data.
