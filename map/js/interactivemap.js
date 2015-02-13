@@ -23,6 +23,27 @@ angular.module("interactivemap", [])
     console.log('entries after http', self.entries);
   }
 
+  this.index = 1;
+
+  this.next = function() {
+    this.index++;
+
+    if(this.index > self.entries.length) {
+      this.index = 1;
+    }
+
+    console.log('index', this.index);
+  };
+  this.prev = function() {
+    this.index--;
+
+    if(this.index < 1) {
+      this.index = self.entries.length;
+    }
+
+    console.log('index', this.index);
+  };
+
   // Load CSV data.
   $http.get('data/nature.csv')
     .success(onSuccess);
