@@ -1,0 +1,34 @@
+<div ng-controller="AppCtrl as appCtrl">
+  <div id="slideshow" ng-controller="SlideshowCtrl as slideshowCtrl" ng-repeat="slideshow in appCtrl.slideshows" ng-show="slideshowCtrl.isCurrent($index)">
+
+    <h1 style="color:black">Slideshow: {{$index}}</h1>
+    <h2 style="color:black">Slide: {{slideshowCtrl.currentSlideIndex}}</h2>
+
+    <div id="slide{{slide.Slide}}" ng-repeat="slide in slideshowCtrl.getSlides()" ng-show="slideshowCtrl.currentSlideIndex==slide.Slide">
+      
+      <div class="map-container">
+        <div class="basemap" style="background-image: url(images/{{slide.BaseMap}})"></div>
+        <div ng-if="slide.TopMap"><img class="topmap" ng-src="images/{{slide.TopMap}}" alt="" /></div>
+        <div snap-animated-svg ng-include="slide.Svg"></div>
+        
+        <div class="content-container">
+          <h1>{{slide.TitleSwedish}}</h1>
+          <p>{{slide.TextBoxSwedish}}</p>
+          <div class="circular" style="background-image: url(images/{{slide.TextBoxImage}})"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="button" ng-click="slideshowCtrl.prev()">prev</button>
+    <button class="button" ng-click="slideshowCtrl.next()">next</button>
+  </div>
+
+  <button class="button" ng-click="appCtrl.changeSlideshow(0)">Slideshow 0</button>
+  <button class="button" ng-click="appCtrl.changeSlideshow(1)">Slideshow 1</button>
+
+  <pre style="color: black; z-index: 1000; position: absolute; top: 200px">
+
+    </pre>
+
+
+</div>

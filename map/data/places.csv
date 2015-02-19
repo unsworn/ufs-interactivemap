@@ -1,6 +1,6 @@
-Slide,TitleSwedish,TextBoxSwedish,TextBoxImage,TopMap,TopMapEnglish,BaseMap,cx,cy
-1,Aphamnen,Vid aphamnen kan man skåda flundror och nyfångad sill,bivrak.jpg,topmap_aphamnen.png,,nature_brag_base_3.jpg,175,196
-2,Bracke,Uppe på Bracke ser man rullstensåsarna rulla bort,lizzard.jpg,topmap_bracke.png,,nature_brag_base_3.jpg,175,196
-3,Cisternen,Cisternen är mörk och fuktig. Här i det ogenomträngliga mörkret kan man föreställa sig okända djur för sin inre blick.,sill.jpg,topmap_cistern.png,,nature_brag_base_3.jpg,175,196
-4,Djupmarken,"Djupmarken är blöt och fuktig. Den sjunker med tiden. Titta en stund, sedan måste du kräla därifrån. Fina sumpstunder utlovas.",toad.jpg,topmap_aphamnen.png,,nature_brag_base_3.jpg,175,196
-5,EONs kundparkering,"Över asflaten bildas fin termik. Här få inte bara rovfåglar utan även daim-papper, icapåsar och kasserade kuvert få luft under vingarna.",lizzard.jpg,topmap_bracke.png,,nature_brag_base_3.jpg,175,196
+Slide,TitleSwedish,TextBoxSwedish,TextBoxImage,TopMap,TopMapEnglish,BaseMap,cx,cy,Svg
+1,Aphamnen,Vid aphamnen kan man skåda flundror och nyfångad sill,bivrak.jpg,topmap_aphamnen.png,,nature_brag_base_3.jpg,175,196,svg/area.svg
+2,Bracke,Uppe på Bracke ser man rullstensåsarna rulla bort,lizzard.jpg,topmap_bracke.png,,nature_brag_base_3.jpg,175,196,svg/path.svg
+3,Cisternen,Cisternen är mörk och fuktig. Här i det ogenomträngliga mörkret kan man föreställa sig okända djur för sin inre blick.,sill.jpg,topmap_cistern.png,,nature_brag_base_3.jpg,175,196,svg/area.svg
+4,Djupmarken,"Djupmarken är blöt och fuktig. Den sjunker med tiden. Titta en stund, sedan måste du kräla därifrån. Fina sumpstunder utlovas.",toad.jpg,topmap_aphamnen.png,,nature_brag_base_3.jpg,175,196,svg/path.svg
+5,EONs kundparkering,"Över asflaten bildas fin termik. Här få inte bara rovfåglar utan även daim-papper, icapåsar och kasserade kuvert få luft under vingarna.",lizzard.jpg,topmap_bracke.png,,nature_brag_base_3.jpg,175,196,

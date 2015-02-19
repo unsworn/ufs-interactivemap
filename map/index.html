@@ -2,37 +2,20 @@
 <html>
 <head>
   <meta charset=utf-8 />
+  <base href="/">
   <title>Interactive map Slideshow 1</title>
   <link href="style.css" rel="stylesheet" />
 
   <script src="js/angular.js"></script>
+  <script src="js/angular-route.js"></script>
   <script src="js/papaparse.js"></script>
+  <script src="js/snap.svg.js"></script>
   <script src="js/interactivemap.js"></script>
+ <!-- <script src="js/svg-animation.js"></script> -->
  
 </head>
 
 <body ng-app="interactivemap">
-
-  <div id="slideshow" ng-controller="SlideshowCtrl as slideshowCtrl">
-
-    <div id="slide{{entry.Slide}}" ng-repeat="entry in slideshowCtrl.entries" ng-show="slideshowCtrl.index=={{entry.Slide}}">
-      <div class="map-container">
-        <div class="basemap" style="background-image: url(images/{{entry.BaseMap}})"></div>
-        <!--<div class="topmap" style="background-image: url(images/{{entry.TopMap}})"></div>-->
-        <div ng-if="entry.TopMap"><img class="topmap" ng-src="images/{{entry.TopMap}}" alt="" /></div>
-      </div>
-      <div class="content-container">
-        <h1>{{entry.TitleSwedish}}</h1>
-        <p>{{entry.TextBoxSwedish}}</p>
-        <div class="circular" style="background-image: url(images/{{entry.TextBoxImage}})"></div>
-      </div>
-    </div>
-
-    <button class="button" ng-click="slideshowCtrl.change()">change slideshow</button>
-    <button class="button" ng-click="slideshowCtrl.prev()">prev</button>
-    <button class="button" ng-click="slideshowCtrl.next()">next</button>
-  
-  </div>
-
+  <ng-view></ng-view>
 </body>
 </html>
